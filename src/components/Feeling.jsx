@@ -1,9 +1,10 @@
 import React from "react";
+import propTypes from 'prop-types'
 
-import styles from "../styles/WeatherApp.module.css";
 import { CiTempHigh } from "react-icons/ci";
+import styles from "../styles/WeatherApp.module.css";
 
-const Feeling = () => {
+const Feeling = ({ feelsLike }) => {
   return (
     <div className={styles.details}>
       <div className={styles.title}>
@@ -15,10 +16,14 @@ const Feeling = () => {
         </div>
       </div>
 
-      <span className={styles.text_value}>30</span>
+      <span className={styles.text_value}>{`${feelsLike}`}</span>
       <span className={styles.text_discription}>Discription</span>
     </div>
   );
 };
 
 export default Feeling;
+
+Feeling.propTypes ={
+  feelsLike: propTypes.number.isRequired,
+}
