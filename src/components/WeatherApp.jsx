@@ -21,15 +21,22 @@ const WeatherApp = () => {
 
   const fetchData = async () => {
     try {
+      const response3 = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&tz=+03:00`)
       const responseWeather = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${sity}&units=metric&tz=+02:00&appid=${apiKey}`
       );
       const responseForecast = await fetch(
         `http://api.openweathermap.org/data/2.5/forecast?q=${sity}&units=metric&tz=+03:00&appid=${apiKey}`
       );
-      if (responseWeather.ok && responseForecast.ok) {
+      if (responseWeather.ok && responseForecast.ok && response3.ok) {
         const jsonWeather = await responseWeather.json();
         const jsonForecast = await responseForecast.json();
+        const json3 = await response3.json();
+        console.log(json3)
+        const day = new Date(1713447917*1000).toLocaleDateString();
+        const time = new Date(1713447917*1000).toLocaleTimeString();
+        console.log(time)
+        console.log(day)
         setWeather(jsonWeather);
         setForecast(jsonForecast);
         setLoading(false);
