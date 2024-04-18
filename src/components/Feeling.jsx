@@ -1,6 +1,5 @@
 import React from "react";
-import propTypes from 'prop-types'
-
+import propTypes from "prop-types";
 import { CiTempHigh } from "react-icons/ci";
 import styles from "../styles/WeatherApp.module.css";
 
@@ -16,7 +15,7 @@ const Feeling = ({ feelsLike }) => {
         </div>
       </div>
 
-      <span className={styles.text_value}>{`${feelsLike}`}</span>
+      <span className={styles.text_value}>{`${Math.round(feelsLike)}`}</span>
       <span className={styles.text_discription}>Discription</span>
     </div>
   );
@@ -24,6 +23,6 @@ const Feeling = ({ feelsLike }) => {
 
 export default Feeling;
 
-Feeling.propTypes ={
+Feeling.propTypes = {
   feelsLike: propTypes.number.isRequired,
-}
+};

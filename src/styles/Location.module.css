@@ -17,3 +17,9 @@
   flex-direction: row;
   background-color: rgb(52, 50, 63);
 }
+@media (min-width: 380px) and (max-width: 480px) {
+  .form {
+    width: 310px;
+    margin-bottom: 0;
+  }
+}

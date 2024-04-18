@@ -31,7 +31,6 @@ body {
   background-color: #94b5cf;
   background-size: cover;
   /* background-image: url('./images/vecteezy_raindrops-on-the-glass_19846848.jpg'); */
-  
 }
 
 h1 {
@@ -62,6 +61,7 @@ button:focus-visible {
   :root {
     color: #213547;
     background-color: #ffffff;
+    
   }
   a:hover {
     color: #747bff;
