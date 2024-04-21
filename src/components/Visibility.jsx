@@ -1,4 +1,5 @@
 import React from "react";
+import propTyres from 'prop-types'
 import styles from "../styles/WeatherApp.module.css";
 import { MdOutlineVisibility } from "react-icons/md";
 
@@ -16,4 +17,7 @@ const Visibility = ({ visibility }) => {
   );
 };
 
+Visibility.propTyres = {
+  visibility: propTyres.number.isRequired,
+}
 export default Visibility;

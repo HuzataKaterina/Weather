@@ -10,7 +10,6 @@ import styles from "../styles/WeatherApp.module.css";
 
 const WeatherApp = () => {
   const [weather, setWeather] = useState({});
-  const [forecast, setForecast] = useState({});
   const [loading, setLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
@@ -21,24 +20,18 @@ const WeatherApp = () => {
 
   const fetchData = async () => {
     try {
-      const response3 = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&tz=+03:00`)
       const responseWeather = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${sity}&units=metric&tz=+02:00&appid=${apiKey}`
+        `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&tz=+03:00`
       );
+
       const responseForecast = await fetch(
         `http://api.openweathermap.org/data/2.5/forecast?q=${sity}&units=metric&tz=+03:00&appid=${apiKey}`
       );
-      if (responseWeather.ok && responseForecast.ok && response3.ok) {
+      if (responseWeather.ok && responseForecast.ok) {
         const jsonWeather = await responseWeather.json();
         const jsonForecast = await responseForecast.json();
-        const json3 = await response3.json();
-        console.log(json3)
-        const day = new Date(1713447917*1000).toLocaleDateString();
-        const time = new Date(1713447917*1000).toLocaleTimeString();
-        console.log(time)
-        console.log(day)
+        console.log(jsonWeather);
         setWeather(jsonWeather);
-        setForecast(jsonForecast);
         setLoading(false);
       } else throw new Error("network is not ok");
     } catch (error) {
@@ -63,21 +56,26 @@ const WeatherApp = () => {
         <>
           <div className={styles.container_left}>
             <CurrentWeather
-              temp={weather.main.temp}
-              mainDescription={weather.weather[0].main}
-              description={weather.weather[0].description}
-              feelsLike={weather.main.feels_like}
-              visibility={weather.visibility}
-              precipitation={forecast.list[0].pop}
-              humidity={weather.main.humidity}
+              temp={weather.current.temp}
+              mainDescription={weather.current.weather[0].description}
+              description={weather.daily[0].summary}
+              feelsLike={weather.current.feels_like}
+              visibility={weather.current.visibility}
+              precipitation={weather.hourly[0].pop}
+              precipitationExp={weather.daily[0].pop}
+              humidity={weather.current.humidity}
+              humidityDewPoint={weather.daily[0].dew_point}
             />
           </div>
           <div className={styles.container_right}>
-            <HourlyWeather hourly={forecast.list} />
-            <PeriodWeather period={forecast.list} />
+            <HourlyWeather hourly={weather.hourly} />
+            <PeriodWeather period={weather.daily} />
             <div className={styles.container_3}>
-              <UvIndex uvIndex={weather} />
-              <Wind wind={weather.wind.speed} guest={weather.wind.gust} />
+              <UvIndex uvIndex={weather.current.uvi} />
+              <Wind
+                wind={weather.current.wind_speed}
+                guest={weather.current.wind_gust}
+              />
             </div>
           </div>
         </>

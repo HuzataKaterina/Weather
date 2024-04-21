@@ -1,4 +1,5 @@
 import React from "react";
+import propTypes from 'prop-types'
 import styles from "../styles/WeatherApp.module.css";
 import { FiWind } from "react-icons/fi";
 import { GiCompass } from "react-icons/gi";
@@ -49,5 +50,7 @@ const Wind = ({ wind, guest }) => {
     </div>
   );
 };
-
+Wind.propTypes = {
+  wind: propTypes.number.isRequired,
+}
 export default Wind;

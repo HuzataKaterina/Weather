@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column wrap;
   width: 1000px;
-  height: 726px;
+  height: 750px;
   padding: 15px;
   margin: 10px;
   color: white;
@@ -48,7 +48,7 @@
   background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
     url("../images/vecteezy_raindrops-on-the-glass_19846848.jpg");
   background-size: cover;
-  background: linear-gradient(180deg, #14182391, rgba(255, 255, 255, 0));
+  /* background: linear-gradient(180deg, #14182391, rgba(255, 255, 255, 0)); */
   flex-direction: column;
   border-radius: 20px;
   color: white;
@@ -63,6 +63,9 @@
   font-size: 12px;
   padding-left: 10px;
   margin: 3px 0;
+}
+.temp_discription::first-letter{
+  text-transform: uppercase;
 }
 .text_value_2 {
   font-size: 12px;
@@ -132,7 +135,7 @@
 }
 .div_hourly {
   width: 70px;
-  padding: 15px 20px;
+  padding: 5px 10px;
   border-radius: 10px;
   margin: 10px;
 }
@@ -165,7 +168,7 @@
 }
 .div_day {
   width: 70px;
-  padding: 15px 20px;
+  padding: 5px 15px;
   border-radius: 10px;
   margin: 10px;
   align-self: stretch;
@@ -176,10 +179,10 @@
   transition: background-color 0.5s ease;
 }
 .div_day div:nth-child(1) {
-  font-size: 12px;
+  font-size: 14px;
 }
 .div_day div:nth-child(2) {
-  font-size: 10px;
+  font-size: 12px;
   color: #ffffff9b;
 }
 .div_day div:nth-child(3) {
@@ -269,6 +272,9 @@ hr {
   }
   .container_curWeather {
     width: 330px;
+  }
+  .details {
+    height: 40%;
   }
   .container_hourly {
     width: 300px;

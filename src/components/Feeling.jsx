@@ -15,8 +15,8 @@ const Feeling = ({ feelsLike }) => {
         </div>
       </div>
 
-      <span className={styles.text_value}>{`${Math.round(feelsLike)}`}</span>
-      <span className={styles.text_discription}>Discription</span>
+      <span className={styles.text_value}>{Math.round(feelsLike)}°</span>
+      <span className={styles.text_discription}>Humidity is making it feel warmer</span>
     </div>
   );
 };
