@@ -6,8 +6,6 @@ import { BsCloudDrizzleFill } from "react-icons/bs";
 
 const HourlyWeather = ({ hourly }) => {
   const newHourly = hourly.slice(0, 10);
-  console.log(newHourly);
-  const day = new Date()
 
   return (
     <div className={styles.container_hourly}>
@@ -19,9 +17,11 @@ const HourlyWeather = ({ hourly }) => {
       </div>
       <hr />
       <div className={styles.hourly}>
-         {newHourly.map((hour) => (
+        {newHourly.map((hour) => (
           <div className={styles.div_hourly}>
-            <div>{new Date(hour.dt*1000).toLocaleTimeString().slice(0,5)}</div>
+            <div>
+              {new Date(hour.dt * 1000).toLocaleTimeString().slice(0, 5)}
+            </div>
             <div>{Math.round(hour.temp)}°</div>
             <img
               src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}.png`}

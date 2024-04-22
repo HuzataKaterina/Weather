@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 import styles from "../styles/WeatherApp.module.css";
 import { WiHumidity } from "react-icons/wi";
 
@@ -13,12 +13,14 @@ const Humidity = ({ humidity, humidityDewPoint }) => {
         </div>
       </div>
       <span className={styles.text_value}>{humidity}%</span>
-      <span className={styles.text_discription}>The dew point is {Math.round(humidityDewPoint)}° right now</span>
+      <span className={styles.text_discription}>
+        The dew point is {Math.round(humidityDewPoint)}° right now
+      </span>
     </div>
   );
 };
-Humidity.PropTypes = {
-  humidity: PropTypes.number.isRequired,
-  humidityDewPoint: PropTypes.number.isRequired,
-}
+Humidity.propTypes = {
+  humidity: propTypes.number.isRequired,
+  humidityDewPoint: propTypes.number.isRequired,
+};
 export default Humidity;

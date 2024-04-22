@@ -1,5 +1,5 @@
 import React from "react";
-import propTypes from 'prop-types'
+import propTypes from "prop-types";
 import styles from "../styles/WeatherApp.module.css";
 import { FiWind } from "react-icons/fi";
 import { GiCompass } from "react-icons/gi";
@@ -17,7 +17,9 @@ const Wind = ({ wind, guest }) => {
         <div>
           <div className={styles.wind_details_div}>
             <div>
-              <span className={styles.text_value}>{Math.round(wind)}</span>
+              <span className={styles.text_value}>
+                {Math.round(wind * 3.6)}
+              </span>
             </div>
             <div>
               <div>
@@ -31,7 +33,9 @@ const Wind = ({ wind, guest }) => {
           <hr />
           <div className={styles.wind_details_div}>
             <div>
-              <span className={styles.text_value}>{Math.round(guest)}</span>
+              <span className={styles.text_value}>
+                {Math.round(guest * 3.6)}
+              </span>
             </div>
             <div>
               <div>
@@ -52,5 +56,6 @@ const Wind = ({ wind, guest }) => {
 };
 Wind.propTypes = {
   wind: propTypes.number.isRequired,
-}
+  guest: propTypes.number.isRequired,
+};
 export default Wind;
