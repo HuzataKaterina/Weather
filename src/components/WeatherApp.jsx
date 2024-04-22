@@ -16,7 +16,7 @@ const WeatherApp = () => {
   const apiKey = "5e4cdc2a829230c047fd0253007d7411";
   const lon = "34.9833";
   const lat = "48.45";
-  const sity = "Dnipro";
+  const city = "Dnipro";
 
   const fetchData = async () => {
     try {
@@ -25,7 +25,7 @@ const WeatherApp = () => {
       );
 
       const responseForecast = await fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?q=${sity}&units=metric&tz=+03:00&appid=${apiKey}`
+        `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&tz=+03:00&appid=${apiKey}`
       );
       if (responseWeather.ok && responseForecast.ok) {
         const jsonWeather = await responseWeather.json();

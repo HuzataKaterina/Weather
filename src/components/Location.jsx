@@ -4,17 +4,17 @@ import { IoLocationOutline } from "react-icons/io5";
 import styles from "../styles/Location.module.css";
 
 const Location = ({ fetchData }) => {
-  const [sity, setSity] = useState("");
+  const [city, setCity] = useState("");
 
   const handleChange = (e) => {
     if (e.target.value !== "") {
-      const newSity = e.target.value.trim();
-      setSity(newSity);
+      const newCity = e.target.value.trim();
+      setCity(newCity);
     }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchData(sity);
+    fetchData(city);
   };
 
   const handleKeyDown = (e) => {
@@ -31,8 +31,8 @@ const Location = ({ fetchData }) => {
           onChange={handleChange}
           onKeyDown={handleKeyDown}
           className={styles.input}
-          placeholder="Enter your sity"
-          value={sity}
+          placeholder="Enter your сity"
+          value={city}
         />
       </form>
     </>
