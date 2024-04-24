@@ -3,8 +3,8 @@ import propTypes from "prop-types";
 import styles from "../styles/WeatherApp.module.css";
 import { TbUvIndex } from "react-icons/tb";
 const UvIndex = ({ uvIndex }) => {
-  let level = null;
-  let text = null;
+  let level;
+  let text;
   switch (Math.round(uvIndex)) {
     case 0:
       (level = "Low"),

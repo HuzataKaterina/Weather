@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column wrap;
   width: 1000px;
-  height: 750px;
+  height: 760px;
   padding: 15px;
   margin: 10px;
   color: white;
@@ -64,7 +64,7 @@
   padding-left: 10px;
   margin: 3px 0;
 }
-.temp_discription::first-letter{
+.temp_discription::first-letter {
   text-transform: uppercase;
 }
 .text_value_2 {
@@ -72,7 +72,7 @@
   padding-left: 10px;
 }
 .container_details {
-  margin: 50px 10px;
+  margin: 40px 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

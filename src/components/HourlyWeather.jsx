@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "../styles/WeatherApp.module.css";
 import { WiTime4 } from "react-icons/wi";
-import { BsCloudDrizzleFill } from "react-icons/bs";
 
 const HourlyWeather = ({ hourly }) => {
   const newHourly = hourly.slice(0, 10);
@@ -18,7 +17,7 @@ const HourlyWeather = ({ hourly }) => {
       <hr />
       <div className={styles.hourly}>
         {newHourly.map((hour) => (
-          <div className={styles.div_hourly}>
+          <div className={styles.div_hourly} key={hour.dt}>
             <div>
               {new Date(hour.dt * 1000).toLocaleTimeString().slice(0, 5)}
             </div>

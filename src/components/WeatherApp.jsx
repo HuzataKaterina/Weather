@@ -9,44 +9,36 @@ import Wind from "./Wind";
 import styles from "../styles/WeatherApp.module.css";
 
 const WeatherApp = () => {
+  const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
   const apiKey = "5e4cdc2a829230c047fd0253007d7411";
-  const lon = "34.9833";
-  const lat = "48.45";
-  const city = "Dnipro";
 
-  const fetchData = async () => {
+  const getCity = (updatedCity) => {
+    setCity(updatedCity);
+  };
+  const fetchData = async (lat, lon) => {
     try {
       const responseWeather = await fetch(
         `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&tz=+03:00`
       );
-
-      const responseForecast = await fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&tz=+03:00&appid=${apiKey}`
-      );
-      if (responseWeather.ok && responseForecast.ok) {
+      if (responseWeather.ok) {
         const jsonWeather = await responseWeather.json();
-        const jsonForecast = await responseForecast.json();
         console.log(jsonWeather);
         setWeather(jsonWeather);
         setLoading(false);
-      } else throw new Error("network is not ok");
+      } else throw new Error();
     } catch (error) {
       setIsError(true);
       console.error(`error fetching ${error}`);
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <div className={styles.container}>
       <div className={styles.container_location}>
-        <Location fetchData={fetchData} />
+        <Location fetchData={fetchData} getCity={getCity} />
       </div>
       {isError ? (
         <div>Data cannot be loaded.</div>
@@ -56,6 +48,7 @@ const WeatherApp = () => {
         <>
           <div className={styles.container_left}>
             <CurrentWeather
+              city={city}
               temp={weather.current.temp}
               mainDescription={weather.current.weather[0].description}
               description={weather.daily[0].summary}
@@ -74,7 +67,7 @@ const WeatherApp = () => {
               <UvIndex uvIndex={weather.current.uvi} />
               <Wind
                 wind={weather.current.wind_speed}
-                guest={weather.current.wind_gust}
+                guest={weather.hourly[0].wind_gust}
               />
             </div>
           </div>
