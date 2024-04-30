@@ -22,38 +22,38 @@ const UvIndex = ({ uvIndex }) => {
       (level = "Moderate"), (text = "SPF 15 & protective clothing (hat)");
       break;
     case 4:
-      (level = "Low"), (text = "SPF 15 & protective clothing (hat)");
+      (level = "Moderate"), (text = "SPF 15 & protective clothing (hat)");
       break;
     case 5:
-      (level = "Low"),
+      (level = "Moderate"),
         (text = "SPF 15, protective clothing, and UV-A&B sun glasses.");
       break;
     case 6:
-      (level = "Low"),
+      (level = "Hight"),
         (text = "SPF 15, protective clothing, and UV-A&B sun glasses.");
       break;
     case 7:
-      (level = "Low"),
+      (level = "Hight"),
         (text =
           "SPF 15, protective clothing, sun glasses and make attempts to avoid the sun between 10am to 4pm.");
       break;
     case 8:
-      (level = "Low"),
+      (level = "Very hight"),
         (text =
           "SPF 15, protective clothing, sun glasses and make attempts to avoid the sun between 10am to 4pm.");
       break;
     case 9:
-      (level = "Low"),
+      (level = "Very hight"),
         (text =
           "SPF 15, protective clothing, sun glasses and make attempts to avoid the sun between 10am to 4pm.");
       break;
     case 10:
-      (level = "Low"),
+      (level = "Very hight"),
         (text =
           "SPF 15, protective clothing, sun glasses and avoid being in the sun between 10am to 4pm.");
       break;
     case 11:
-      (level = "Low"),
+      (level = "EXtrem"),
         (text =
           "SPF 15, protective clothing, sun glasses and avoid being in the sun between 10am to 4pm.");
       break;

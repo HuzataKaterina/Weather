@@ -6,13 +6,10 @@ import styles from "../styles/Location.module.css";
 const Location = ({ fetchData, getCity, setStatus }) => {
   const apiKey = "5e4cdc2a829230c047fd0253007d7411";
   const [сityInputValue, setCityInputValue] = useState("");
-  const [lat, setLat] = useState("");
-  const [lon, setLon] = useState("");
 
   const handleChange = (e) => {
-      const updatedCity = e.target.value;
-      setCityInputValue(updatedCity);
-    
+    const updatedCity = e.target.value;
+    setCityInputValue(updatedCity);
   };
   const fetchGeocoord = async () => {
     try {
@@ -22,18 +19,16 @@ const Location = ({ fetchData, getCity, setStatus }) => {
       if (responseGeocoord.ok) {
         const jsonGeocoord = await responseGeocoord.json();
         console.log(jsonGeocoord);
-        setLat(jsonGeocoord.city.coord.lat);
-        setLon(jsonGeocoord.city.coord.lon);
         fetchData(jsonGeocoord.city.coord.lat, jsonGeocoord.city.coord.lon);
         getCity(`${jsonGeocoord.city.name}, ${jsonGeocoord.city.country}`);
       } else throw new Error("City is not found");
     } catch (error) {
       console.error(error);
-      setStatus('error')
+      setStatus("error");
     }
   };
   const handleSubmit = (e) => {
-    setStatus('loading')
+    setStatus("loading");
     e.preventDefault();
     fetchGeocoord();
     setCityInputValue("");
