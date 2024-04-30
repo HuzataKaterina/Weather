@@ -15,6 +15,10 @@
   margin-top: 20px;
   margin-left: 10px;
 }
+.div_city {
+  margin-bottom: 15px;
+  margin: 2px auto 15px;
+}
 .container_left {
   width: 400px;
   display: flex;
@@ -45,13 +49,25 @@
 .container_curWeather {
   width: 420px;
   display: flex;
-  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
-    url("../images/vecteezy_raindrops-on-the-glass_19846848.jpg");
-  background-size: cover;
-  /* background: linear-gradient(180deg, #14182391, rgba(255, 255, 255, 0)); */
+  background: linear-gradient(
+    180deg,
+    #14182391,
+    rgba(255, 255, 255, 0),
+    #94b5cf
+  );
   flex-direction: column;
   border-radius: 20px;
   color: white;
+}
+.rain {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/vecteezy_raindrops-on-the-glass_19846848.jpg");
+  background-size: cover;
+}
+.clouds {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("../images/Clouds.svg");
+  background-size: cover;
 }
 .textTemp {
   font-size: 100px;
@@ -247,18 +263,85 @@ hr {
   border: rgba(124, 122, 122, 0.712);
   border-radius: 1px;
 }
+@media (min-width: 480px) and (max-width: 1100px) {
+  .container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+    align-items: center;
+    padding: 5px;
+  }
+  .container_right {
+    width: 90%;
+    margin: auto;
+    padding-top: 1%;
+  }
+  .container_left {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  .container_location {
+    width: 90%;
+    margin: auto;
+    padding: 2% 0;
+  }
+  .container_curWeather {
+    width: 90%;
+  }
+  .container_details {
+    margin: 10% auto;
+  }
+  .details {
+    width: 40%;
+    height: 120px;
+  }
+  .container_hourly {
+    width: 85%;
+    margin: 2% auto;
+  }
+  .container_3 {
+    width: 92%;
+    padding-bottom: 2%;
+    margin: auto;
+    justify-content: space-between;
+  }
+  .uv_index {
+    width: 44%;
+    margin: 1%;
+  }
+  .wind {
+    width: 44%;
+    margin: 1%;
+  }
+  .wind_details hr {
+    width: 100%;
+  }
+  hr {
+    width: 100%;
+  }
+  .wind svg {
+    align-items: flex-start;
+  }
+}
 @media (min-width: 380px) and (max-width: 480px) {
   .container {
     width: 330px;
     height: 1390px;
     display: flex;
     flex-flow: column;
-    margin: auto;
+    margin: 5px auto;
     align-items: baseline;
+    padding: 10px 15px;
   }
   .container_location {
+    width: 330px;
     margin-left: 0px;
-    margin-top: 3px;
+    margin: 5px auto 0 0;
+    padding: 0;
   }
   .container_left {
     width: 330px;
@@ -304,5 +387,61 @@ hr {
   }
   .title {
     padding: 0;
+  }
+}
+@media (min-width: 320px) and (max-width: 380px) {
+  .container {
+    width: 95%;
+    height: 100%;
+    padding: 0;
+    margin: auto;
+  }
+  .container_location {
+    width: 90%;
+    margin: 15px auto;
+  }
+  .container_left {
+    width: 90%;
+    margin: auto;
+  }
+  .container_right {
+    width: 90%;
+    margin: auto;
+  }
+  .container_curWeather {
+    width: 95%;
+    margin: auto;
+  }
+  .container_3 {
+    width: 95%;
+    margin: auto;
+    flex-direction: column;
+  }
+  .container_hourly {
+    width: 85%;
+    margin: 10px auto;
+  }
+  .details {
+    width: 85%;
+  }
+  .container_details {
+    margin: 10px auto;
+  }
+  .uv_index {
+    width: 95%;
+    margin: 10px auto;
+  }
+  .wind {
+    width: 95%;
+    margin: 10px auto;
+  }
+  hr {
+    width: 100%;
+  }
+  .div_hourly {
+    margin: 5px;
+  }
+  .div_day {
+    margin: 5px;
   }
 }

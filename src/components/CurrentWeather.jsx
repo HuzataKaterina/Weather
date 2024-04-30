@@ -8,6 +8,7 @@ import Humidity from "./Humidity";
 import styles from "../styles/WeatherApp.module.css";
 
 const CurrentWeather = ({
+  main,
   city,
   feelsLike,
   temp,
@@ -20,7 +21,7 @@ const CurrentWeather = ({
   humidityDewPoint,
 }) => {
   return (
-    <div className={styles.container_curWeather}>
+    <div className={`${styles.container_curWeather} ${main.toLowerCase()}`}>
       <div className={styles.container_temp}>
         <div>
           <span>{city}</span>

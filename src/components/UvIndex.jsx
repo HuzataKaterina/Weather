@@ -59,7 +59,7 @@ const UvIndex = ({ uvIndex }) => {
       break;
   }
   return (
-    <div>
+    
       <div className={styles.uv_index}>
         <div className={styles.title}>
           <TbUvIndex />
@@ -79,7 +79,7 @@ const UvIndex = ({ uvIndex }) => {
           list="values"
         />
         <span className={styles.text_discription}>{text}</span>
-      </div>
+      
     </div>
   );
 };

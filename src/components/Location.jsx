@@ -3,40 +3,40 @@ import propTypes from "prop-types";
 import { IoLocationOutline } from "react-icons/io5";
 import styles from "../styles/Location.module.css";
 
-const Location = ({ fetchData, getCity }) => {
+const Location = ({ fetchData, getCity, setStatus }) => {
   const apiKey = "5e4cdc2a829230c047fd0253007d7411";
-  const [newCity, setNewCity] = useState("");
+  const [сityInputValue, setCityInputValue] = useState("");
   const [lat, setLat] = useState("");
   const [lon, setLon] = useState("");
 
   const handleChange = (e) => {
-    if (e.target.value !== "") {
       const updatedCity = e.target.value;
-      setNewCity(updatedCity.trim());
-    }
+      setCityInputValue(updatedCity);
+    
   };
   const fetchGeocoord = async () => {
     try {
       const responseGeocoord = await fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?q=${newCity}&units=metric&tz=+03:00&appid=${apiKey}`
+        `http://api.openweathermap.org/data/2.5/forecast?q=${сityInputValue.trim()}&units=metric&tz=+03:00&appid=${apiKey}`
       );
       if (responseGeocoord.ok) {
         const jsonGeocoord = await responseGeocoord.json();
         console.log(jsonGeocoord);
         setLat(jsonGeocoord.city.coord.lat);
         setLon(jsonGeocoord.city.coord.lon);
-
         fetchData(jsonGeocoord.city.coord.lat, jsonGeocoord.city.coord.lon);
         getCity(`${jsonGeocoord.city.name}, ${jsonGeocoord.city.country}`);
       } else throw new Error("City is not found");
     } catch (error) {
       console.error(error);
+      setStatus('error')
     }
   };
   const handleSubmit = (e) => {
+    setStatus('loading')
     e.preventDefault();
     fetchGeocoord();
-    setNewCity("");
+    setCityInputValue("");
   };
 
   const handleKeyDown = (e) => {
@@ -60,7 +60,8 @@ const Location = ({ fetchData, getCity }) => {
           onKeyDown={handleKeyDown}
           className={styles.input}
           placeholder="Enter your сity"
-          value={newCity}
+          value={сityInputValue}
+          autoFocus
         />
       </form>
     </>

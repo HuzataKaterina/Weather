@@ -2,11 +2,9 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,7 +19,6 @@ a {
 a:hover {
   color: #535bf2;
 }
-
 body {
   margin: 0;
   display: flex;
@@ -29,10 +26,142 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #94b5cf;
-  background-size: cover;
-  background-image: url("./images/vecteezy_raindrops-on-the-glass_19846848.jpg");
 }
-
+.rain {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/vecteezy_raindrops-on-the-glass_19846848.jpg");
+  background-size: cover;
+}
+.body_rain {
+  background-image: url("./images/vecteezy_raindrops-on-the-glass_19846848.jpg");
+  background-size: cover;
+}
+.clouds {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/Clouds.svg");
+  background-size: cover;
+}
+.body_clouds {
+  background-image: url("./images/Clouds.svg");
+  background-size: cover;
+}
+.clear {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/Clear.svg");
+  background-size: cover;
+}
+.body_clear {
+  background-image: url("./images/Clear.svg");
+  background-size: cover;
+}
+.snow {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/Snow.svg");
+  background-size: cover;
+}
+.body_snow {
+  background-image: url("./images/Snow.svg");
+  background-size: cover;
+}
+.thunderstorm {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/Thunderstorm.svg");
+  background-size: cover;
+}
+.body_thunderstorm {
+  background-image: url("./images/Thunderstorm.svg");
+  background-size: cover;
+}
+.drizzle {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/Drizzle2.svg");
+  background-size: cover;
+}
+.body_drizzle {
+  background-image: url("./images/Drizzle2.svg");
+  background-size: cover;
+}
+.fog {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/Fog.svg");
+  background-size: cover;
+}
+.body_fog {
+  background-image: url("./images/Fog.svg");
+  background-size: cover;
+}
+.sand {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/Sand.svg");
+  background-size: cover;
+}
+.body_sand {
+  background-image: url("./images/Sand.svg");
+  background-size: cover;
+}
+.tornado {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/Sand.svg");
+  background-size: cover;
+}
+.body_tornado {
+  background-image: url("./images/Sand.svg");
+  background-size: cover;
+}
+.dust {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/Dust.svg");
+  background-size: cover;
+}
+.body_dust {
+  background-image: url("./images/Dust.svg");
+  background-size: cover;
+}
+.mist {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/mist.jpg");
+  background-size: cover;
+}
+.body_mist {
+  background-image: url("./images/mist.jpg");
+  background-size: cover;
+}
+.haze {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/haze.jpg");
+  background-size: cover;
+}
+.body_haze {
+  background-image: url("./images/haze.jpg");
+  background-size: cover;
+}
+.ash {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/ash.jpg");
+  background-size: cover;
+}
+.body_ash {
+  background-image: url("./images/ash.jpg");
+  background-size: cover;
+}
+.squall {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/squall.jpg");
+  background-size: cover;
+}
+.body_squall {
+  background-image: url("./images/squall.jpg");
+  background-size: cover;
+}
+.smoke {
+  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
+    url("./images/smoke.jpg");
+  background-size: cover;
+}
+.body_smoke {
+  background-image: url("./images/smoke.jpg");
+  background-size: cover;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

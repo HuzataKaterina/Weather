@@ -11,13 +11,18 @@ import styles from "../styles/WeatherApp.module.css";
 const WeatherApp = () => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-
+  const [status, setStatus] = useState("");
+  const [image, setImage] = useState("");
   const apiKey = "5e4cdc2a829230c047fd0253007d7411";
 
   const getCity = (updatedCity) => {
     setCity(updatedCity);
+  };
+
+  const setBgnd = (newImage) => {
+    document.querySelector("body").classList.remove(`body_${image}`);
+    setImage(newImage);
+    document.querySelector("body").classList.toggle(`body_${newImage}`);
   };
   const fetchData = async (lat, lon) => {
     try {
@@ -28,26 +33,35 @@ const WeatherApp = () => {
         const jsonWeather = await responseWeather.json();
         console.log(jsonWeather);
         setWeather(jsonWeather);
-        setLoading(false);
+        setStatus("success");
+        // document.querySelector('body').classList.remove(`body_${image}`)
+        setBgnd(jsonWeather.current.weather[0].main.toLowerCase());
+        // document.querySelector('body').classList.toggle(`body_${jsonWeather.current.weather[0].main.toLowerCase()}`)
+        // document.querySelector('body').classList.add(`body_${jsonWeather.current.weather[0].main.toLowerCase()}`)
       } else throw new Error();
     } catch (error) {
-      setIsError(true);
       console.error(`error fetching ${error}`);
+      setStatus("Error");
     }
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.container_location}>
-        <Location fetchData={fetchData} getCity={getCity} />
+        <Location
+          fetchData={fetchData}
+          getCity={getCity}
+          setStatus={setStatus}
+        />
       </div>
-      {isError ? (
-        <div>Data cannot be loaded.</div>
-      ) : loading ? (
-        <div>Loading...</div>
-      ) : (
+      {status === "" && <div className={styles.div_city}>Choose the city</div>}
+      {status === "error" && <div className={styles.div_city}>City is not found</div>}
+      {status === "loading" && <div className={styles.div_city}>Loading...</div>}
+      {status === "success" && (
         <>
           <div className={styles.container_left}>
             <CurrentWeather
+              main={weather.current.weather[0].main}
               city={city}
               temp={weather.current.temp}
               mainDescription={weather.current.weather[0].description}

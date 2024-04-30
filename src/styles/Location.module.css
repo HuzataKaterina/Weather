@@ -7,7 +7,6 @@
   padding: 0 5px;
   color: #ffffff9b;
 }
-
 .form {
   width: 400px;
   margin-bottom: 10px;
@@ -17,9 +16,27 @@
   flex-direction: row;
   background-color: rgb(52, 50, 63);
 }
+@media (min-width: 480px) and (max-width: 1100px) {
+  .form {
+    width: 86%;
+    margin: auto;
+  }
+}
 @media (min-width: 380px) and (max-width: 480px) {
   .form {
     width: 310px;
     margin-bottom: 0;
+  }
+  .input {
+    width: 310px;
+  }
+}
+@media (min-width: 320px) and (max-width: 380px) {
+  .input {
+    width: 80%;
+  }
+  .form {
+    width: 90%;
+    margin: auto;
   }
 }
