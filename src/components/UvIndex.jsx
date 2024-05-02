@@ -8,54 +8,54 @@ const UvIndex = ({ uvIndex }) => {
   switch (Math.round(uvIndex)) {
     case 0:
       (level = "Low"),
-        (text = "Apply skin protection factor (SPF) 15 sun screen.");
+        (text = "Wear sunglasses on bright days");
       break;
     case 1:
       (level = "Low"),
-        (text = "Apply skin protection factor (SPF) 15 sun screen.");
+        (text = "Wear sunglasses on bright days");
       break;
     case 2:
       (level = "Low"),
-        (text = "Apply skin protection factor (SPF) 15 sun screen.");
+        (text = "Wear sunglasses on bright days");
       break;
     case 3:
-      (level = "Moderate"), (text = "SPF 15 & protective clothing (hat)");
+      (level = "Moderate"), (text = "Stay in shade near midday when the sun is strongest");
       break;
     case 4:
-      (level = "Moderate"), (text = "SPF 15 & protective clothing (hat)");
+      (level = "Moderate"), (text = "Stay in shade near midday when the sun is strongest");
       break;
     case 5:
       (level = "Moderate"),
-        (text = "SPF 15, protective clothing, and UV-A&B sun glasses.");
+        (text = "Stay in shade near midday when the sun is strongest");
       break;
     case 6:
       (level = "Hight"),
-        (text = "SPF 15, protective clothing, and UV-A&B sun glasses.");
+        (text = "Reduce time in the sun between 10 a.m. and 4 p.m.");
       break;
     case 7:
       (level = "Hight"),
         (text =
-          "SPF 15, protective clothing, sun glasses and make attempts to avoid the sun between 10am to 4pm.");
+          "Reduce time in the sun between 10 a.m. and 4 p.m.");
       break;
     case 8:
       (level = "Very hight"),
         (text =
-          "SPF 15, protective clothing, sun glasses and make attempts to avoid the sun between 10am to 4pm.");
+          "Minimize sun exposure between 10 a.m. and 4 p.m.");
       break;
     case 9:
       (level = "Very hight"),
         (text =
-          "SPF 15, protective clothing, sun glasses and make attempts to avoid the sun between 10am to 4pm.");
+          "Minimize sun exposure between 10 a.m. and 4 p.m.");
       break;
     case 10:
       (level = "Very hight"),
         (text =
-          "SPF 15, protective clothing, sun glasses and avoid being in the sun between 10am to 4pm.");
+          "Minimize sun exposure between 10 a.m. and 4 p.m.");
       break;
     case 11:
       (level = "EXtrem"),
         (text =
-          "SPF 15, protective clothing, sun glasses and avoid being in the sun between 10am to 4pm.");
+          "Take all precautions because unprotected skin and eyes can burn in minutes");
       break;
   }
   return (
