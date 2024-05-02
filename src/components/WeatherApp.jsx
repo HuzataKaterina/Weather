@@ -5,6 +5,7 @@ import HourlyWeather from "./HourlyWeather";
 import PeriodWeather from "./PeriodWeather";
 import UvIndex from "./UvIndex";
 import Wind from "./Wind";
+import ClipLoader from 'react-spinners/ClipLoader';
 
 import styles from "../styles/WeatherApp.module.css";
 
@@ -22,7 +23,7 @@ const WeatherApp = () => {
   const changeBackground = (newImage) => {
     document.querySelector("body").classList.remove(`body_${image}`);
     setImage(newImage);
-    document.querySelector("body").classList.toggle(`body_${newImage}`);
+    document.querySelector("body").classList.add(`body_${newImage}`);
   };
   const fetchData = async (lat, lon) => {
     try {
@@ -45,6 +46,7 @@ const WeatherApp = () => {
     }
   };
 
+
   return (
     <div className={styles.container}>
       <div className={styles.container_location}>
@@ -54,9 +56,9 @@ const WeatherApp = () => {
           setStatus={setStatus}
         />
       </div>
-      {status === "" && <div className={styles.div_city}>Choose the city</div>}
-      {status === "error" && <div className={styles.div_city}>City is not found</div>}
-      {status === "loading" && <div className={styles.div_city}>Loading...</div>}
+      {status === "" && <div className={styles.div_status}>Choose the city</div>}
+      {status === "error" && <div className={styles.div_status}>City is not found</div>}
+      {status === "loading" && <div className={styles.div_status}><ClipLoader color='white'/></div>}
       {status === "success" && (
         <>
           <div className={styles.container_left}>
