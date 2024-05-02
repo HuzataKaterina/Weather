@@ -29,11 +29,11 @@ body {
 }
 .rain {
   background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
-    url("./images/vecteezy_raindrops-on-the-glass_19846848.jpg");
+    url("./images/raindrops.svg");
   background-size: cover;
 }
 .body_rain {
-  background-image: url("./images/vecteezy_raindrops-on-the-glass_19846848.jpg");
+  background-image: url("./images/raindrops.svg");
   background-size: cover;
 }
 .clouds {

@@ -19,7 +19,7 @@ const WeatherApp = () => {
     setCity(updatedCity);
   };
 
-  const setBgnd = (newImage) => {
+  const changeBackground = (newImage) => {
     document.querySelector("body").classList.remove(`body_${image}`);
     setImage(newImage);
     document.querySelector("body").classList.toggle(`body_${newImage}`);
@@ -35,7 +35,7 @@ const WeatherApp = () => {
         setWeather(jsonWeather);
         setStatus("success");
         // document.querySelector('body').classList.remove(`body_${image}`)
-        setBgnd(jsonWeather.current.weather[0].main.toLowerCase());
+        changeBackground(jsonWeather.current.weather[0].main.toLowerCase());
         // document.querySelector('body').classList.toggle(`body_${jsonWeather.current.weather[0].main.toLowerCase()}`)
         // document.querySelector('body').classList.add(`body_${jsonWeather.current.weather[0].main.toLowerCase()}`)
       } else throw new Error();
