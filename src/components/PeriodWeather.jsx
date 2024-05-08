@@ -23,7 +23,7 @@ const PeriodWeather = ({ period }) => {
             <div>{Math.round(day.temp.day)}°</div>
             <img
               src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`}
-              alt=""
+              alt={day.weather[0].main}
             />
           </div>
         ))}

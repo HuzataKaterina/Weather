@@ -5,7 +5,7 @@ import HourlyWeather from "./HourlyWeather";
 import PeriodWeather from "./PeriodWeather";
 import UvIndex from "./UvIndex";
 import Wind from "./Wind";
-import ClipLoader from 'react-spinners/ClipLoader';
+import ClipLoader from "react-spinners/ClipLoader";
 
 import styles from "../styles/WeatherApp.module.css";
 
@@ -14,7 +14,7 @@ const WeatherApp = () => {
   const [weather, setWeather] = useState({});
   const [status, setStatus] = useState("");
   const [image, setImage] = useState("");
-  const apiKey = "5e4cdc2a829230c047fd0253007d7411";
+  // const apiKey = "5e4cdc2a829230c047fd0253007d7411";
 
   const getCity = (updatedCity) => {
     setCity(updatedCity);
@@ -28,24 +28,22 @@ const WeatherApp = () => {
   const fetchData = async (lat, lon) => {
     try {
       const responseWeather = await fetch(
-        `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&tz=+03:00`
+        `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${
+          import.meta.env.VITE_API_KEY
+        }&units=metric&tz=+03:00`
       );
       if (responseWeather.ok) {
         const jsonWeather = await responseWeather.json();
         console.log(jsonWeather);
         setWeather(jsonWeather);
         setStatus("success");
-        // document.querySelector('body').classList.remove(`body_${image}`)
         changeBackground(jsonWeather.current.weather[0].main.toLowerCase());
-        // document.querySelector('body').classList.toggle(`body_${jsonWeather.current.weather[0].main.toLowerCase()}`)
-        // document.querySelector('body').classList.add(`body_${jsonWeather.current.weather[0].main.toLowerCase()}`)
       } else throw new Error();
     } catch (error) {
-      console.error(`error fetching ${error}`);
+      console.error(`Error fetching ${error}`);
       setStatus("Error");
     }
   };
-
 
   return (
     <div className={styles.container}>
@@ -56,9 +54,17 @@ const WeatherApp = () => {
           setStatus={setStatus}
         />
       </div>
-      {status === "" && <div className={styles.div_status}>Choose the city</div>}
-      {status === "error" && <div className={styles.div_status}>City is not found</div>}
-      {status === "loading" && <div className={styles.div_status}><ClipLoader color='white'/></div>}
+      {status === "" && (
+        <div className={styles.div_status}>Enter the city</div>
+      )}
+      {status === "error" && (
+        <div className={styles.div_status}>The city is not found</div>
+      )}
+      {status === "loading" && (
+        <div className={styles.div_status}>
+          <ClipLoader color="white" />
+        </div>
+      )}
       {status === "success" && (
         <>
           <div className={styles.container_left}>

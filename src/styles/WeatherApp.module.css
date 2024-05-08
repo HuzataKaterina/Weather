@@ -1,3 +1,7 @@
+:root{
+  --main-border-radius: 20px;
+  --main-bgr-color: #080b1481;
+}
 .container {
   display: flex;
   flex-flow: column wrap;
@@ -5,10 +9,10 @@
   height: 760px;
   padding: 15px;
   margin: 10px;
-  color: white;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #14182391;
+  color: white;
   border-radius: 25px;
 }
 .container_location {
@@ -20,55 +24,46 @@
   margin: 2px auto 15px;
 }
 .container_left {
-  width: 400px;
   display: flex;
   flex-direction: column;
+  width: 400px;
   margin: 10px 20px;
   align-items: center;
 }
 .container_right {
+  display: flex;
+  flex-direction: column;
   width: 550px;
   margin: 20px;
-  display: flex;
   align-items: baseline;
   justify-items: flex-start;
-  flex-direction: column;
 }
 .container_3 {
-  width: 530px;
   display: flex;
   flex-direction: row;
+  width: 530px;
   justify-content: space-between;
 }
 .container_temp {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
   padding-top: 15px;
 }
 .container_curWeather {
-  width: 420px;
   display: flex;
+  flex-direction: column;
+  width: 420px;
   background: linear-gradient(
     180deg,
     #14182391,
     rgba(255, 255, 255, 0),
     #94b5cf
   );
-  flex-direction: column;
-  border-radius: 20px;
+  border-radius: var(--main-border-radius);
   color: white;
 }
-.rain {
-  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
-    url("./images/vecteezy_raindrops-on-the-glass_19846848.jpg");
-  background-size: cover;
-}
-.clouds {
-  background-image: linear-gradient(180deg, #141823e6, rgba(255, 255, 255, 0)),
-    url("../images/Clouds.svg");
-  background-size: cover;
-}
+
 .textTemp {
   font-size: 100px;
 }
@@ -76,36 +71,36 @@
   font-size: 30px;
 }
 .text_discription {
-  font-size: 12px;
   padding-left: 10px;
   margin: 3px 0;
+  font-size: 12px;
 }
 .temp_discription::first-letter {
   text-transform: uppercase;
 }
 .text_value_2 {
-  font-size: 12px;
   padding-left: 10px;
+  font-size: 12px;
 }
 .container_details {
-  margin: 40px 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 40px 10px;
   justify-content: space-around;
   align-content: stretch;
 }
 .details {
-  width: 40%;
-  height: 45%;
   display: flex;
   flex-direction: column;
+  width: 40%;
+  height: 45%;
   padding: 10px;
-  background-color: rgb(0, 0, 0, 0.4);
   margin: 5px;
-  border-radius: 20px;
-  color: #fff;
   text-align: left;
+  background-color: rgb(0, 0, 0, 0.4);
+  border-radius: var(--main-border-radius);
+  color: #fff;
 }
 .title {
   display: flex;
@@ -120,17 +115,17 @@
   align-items: center;
 }
 .text_value {
-  font-size: 23px;
   padding: 0 10px;
+  font-size: 23px;
 }
 .container_hourly {
-  max-width: 500px;
   display: flex;
   flex-direction: column;
-  background-color: #080b1481;
-  border-radius: 20px;
+  max-width: 500px;
   padding: 15px;
   margin-bottom: 20px;
+  background-color: var(--main-bgr-color);
+  border-radius: 20px;
 }
 .hourly {
   display: flex;
@@ -152,8 +147,8 @@
 .div_hourly {
   width: 70px;
   padding: 5px 10px;
-  border-radius: 10px;
   margin: 10px;
+  border-radius: 10px;
 }
 .div_hourly div:nth-child(1) {
   font-size: 12px;
@@ -185,8 +180,8 @@
 .div_day {
   width: 70px;
   padding: 5px 15px;
-  border-radius: 10px;
   margin: 10px;
+  border-radius: 10px;
   align-self: stretch;
   justify-self: center;
 }
@@ -205,22 +200,22 @@
   font-size: 25px;
 }
 .uv_index {
-  width: 230px;
   display: flex;
   flex-direction: column;
-  align-content: space-around;
+  width: 230px;
   padding: 10px;
-  border-radius: 20px;
-  background-color: rgb(0, 0, 0, 0.4);
+  align-content: space-around;
   text-align: left;
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-bgr-color);
 }
 .wind {
-  width: 230px;
   display: flex;
   flex-direction: column;
+  width: 230px;
   padding: 10px;
-  border-radius: 20px;
-  background-color: rgb(0, 0, 0, 0.4);
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-bgr-color);
   text-align: left;
 }
 .wind_details {
@@ -250,10 +245,10 @@
 }
 .range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  margin-top: -1.5px;
-  background-color: rgb(249, 245, 245);
   height: 8px;
   width: 8px;
+  margin-top: -1.5px;
+  background-color: rgb(249, 245, 245);
   border-radius: 50%;
 }
 hr {
@@ -265,13 +260,13 @@ hr {
 }
 @media (min-width: 480px) and (max-width: 1100px) {
   .container {
-    width: 80%;
-    height: 100%;
     display: flex;
     flex-flow: column;
+    width: 80%;
+    height: 100%;
     margin: auto;
-    align-items: center;
     padding: 5px;
+    align-items: center;
   }
   .container_right {
     width: 90%;
@@ -279,9 +274,9 @@ hr {
     padding-top: 1%;
   }
   .container_left {
-    width: 90%;
     display: flex;
     flex-direction: column;
+    width: 90%;
     margin: auto;
   }
   .container_location {
@@ -329,13 +324,13 @@ hr {
 }
 @media (min-width: 380px) and (max-width: 480px) {
   .container {
-    width: 330px;
-    height: 1390px;
     display: flex;
     flex-flow: column;
+    width: 330px;
+    height: 1390px;
     margin: 5px auto;
-    align-items: baseline;
     padding: 10px 15px;
+    align-items: baseline;
   }
   .container_location {
     width: 330px;
@@ -344,9 +339,9 @@ hr {
     padding: 0;
   }
   .container_left {
-    width: 330px;
     display: flex;
     flex-direction: column;
+    width: 330px;
     margin: auto;
   }
   .container_right {
@@ -413,9 +408,9 @@ hr {
     margin: auto;
   }
   .container_3 {
+    flex-direction: column;
     width: 95%;
     margin: auto;
-    flex-direction: column;
   }
   .container_hourly {
     width: 85%;

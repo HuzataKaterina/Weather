@@ -48,6 +48,7 @@ const CurrentWeather = ({
 export default CurrentWeather;
 
 CurrentWeather.propTypes = {
+  main: propTypes.string.isRequired,
   city: propTypes.string.isRequired,
   feelsLike: propTypes.number.isRequired,
   temp: propTypes.number.isRequired,
@@ -55,6 +56,7 @@ CurrentWeather.propTypes = {
   visibility: propTypes.number.isRequired,
   mainDescription: propTypes.string.isRequired,
   description: propTypes.string.isRequired,
+  precipitation: propTypes.number.isRequired,
   precipitationExp: propTypes.number.isRequired,
   humidityDewPoint: propTypes.number.isRequired,
 };

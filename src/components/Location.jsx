@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import propTypes from "prop-types";
 import { IoLocationOutline } from "react-icons/io5";
 import styles from "../styles/Location.module.css";
 
 const Location = ({ fetchData, getCity, setStatus }) => {
-  const apiKey = "5e4cdc2a829230c047fd0253007d7411";
+  // const apiKey = "5e4cdc2a829230c047fd0253007d7411";
   const [сityInputValue, setCityInputValue] = useState("");
 
   const handleChange = (e) => {
@@ -14,7 +14,9 @@ const Location = ({ fetchData, getCity, setStatus }) => {
   const fetchGeocoord = async () => {
     try {
       const responseGeocoord = await fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?q=${сityInputValue.trim()}&units=metric&tz=+03:00&appid=${apiKey}`
+        `http://api.openweathermap.org/data/2.5/forecast?q=${сityInputValue.trim()}&units=metric&tz=+03:00&appid=${
+          import.meta.env.VITE_API_KEY
+        }`
       );
       if (responseGeocoord.ok) {
         const jsonGeocoord = await responseGeocoord.json();
