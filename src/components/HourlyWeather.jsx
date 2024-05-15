@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import styles from "../styles/WeatherApp.module.css";
 import { WiTime4 } from "react-icons/wi";
+import styles from "../styles/WeatherApp.module.css";
 
 const HourlyWeather = ({ hourly }) => {
   const newHourly = hourly.slice(0, 10);

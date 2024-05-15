@@ -1,7 +1,8 @@
 import React from "react";
 import propTypes from "prop-types";
-import styles from "../styles/WeatherApp.module.css";
 import { TbUvIndex } from "react-icons/tb";
+import styles from "../styles/WeatherApp.module.css";
+
 const UvIndex = ({ uvIndex }) => {
   let level;
   let text;

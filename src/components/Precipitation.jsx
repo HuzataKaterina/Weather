@@ -1,7 +1,7 @@
 import React from "react";
 import propTypes from "prop-types";
-import styles from "../styles/WeatherApp.module.css";
 import { IoWaterOutline } from "react-icons/io5";
+import styles from "../styles/WeatherApp.module.css";
 
 const Precipitation = ({ precipitation, precipitationExp }) => {
   return (

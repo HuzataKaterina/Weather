@@ -1,7 +1,7 @@
 import React from "react";
 import propTypes from "prop-types";
-import styles from "../styles/WeatherApp.module.css";
 import { WiHumidity } from "react-icons/wi";
+import styles from "../styles/WeatherApp.module.css";
 
 const Humidity = ({ humidity, humidityDewPoint }) => {
   return (

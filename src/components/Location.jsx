@@ -70,4 +70,5 @@ export default Location;
 Location.propTypes = {
   getCity: propTypes.func.isRequired,
   fetchData: propTypes.func.isRequired,
+  setStatus: propTypes.func.isRequired,
 };
