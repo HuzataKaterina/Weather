@@ -1,60 +1,38 @@
 import React from "react";
-import styles from "../styles/WeatherApp.module.css";
+import propTypes from "prop-types";
 import { IoCalendarClearOutline } from "react-icons/io5";
-import { BsCloudDrizzleFill } from "react-icons/bs";
-const PeriodWeather = () => {
+import styles from "../styles/WeatherApp.module.css";
+
+const PeriodWeather = ({ period }) => {
   return (
     <div className={styles.container_hourly}>
       <div className={styles.title}>
         <IoCalendarClearOutline />
         <div>
-          <span>10-DAY FORECAST</span>
+          <span>7-DAY FORECAST</span>
         </div>
       </div>
 
       <hr />
       <div className={styles.period}>
-        <div className={styles.div_day}>
-          <div>DAY</div>
-          <div>16/09</div>
-          <div>29°</div>
-          <BsCloudDrizzleFill size={25} />
-        </div>
-        <div className={styles.div_day}>
-          <div>DAY</div>
-          <div>16/09</div>
-          <div>29°</div>
-          <BsCloudDrizzleFill />
-        </div>
-        <div className={styles.div_day}>
-          <div>DAY</div>
-          <div>16/09</div>
-          <div>29°</div>
-          <img src="" alt="" />
-        </div>
-        <div className={styles.div_day}>
-          <div>DAY</div>
-          <div>16/09</div>
-          <div>29°</div>
-        </div>
-        <div className={styles.div_day}>
-          <div>DAY</div>
-          <div>16/09</div>
-          <div>29°</div>
-        </div>
-        <div className={styles.div_day}>
-          <div>DAY</div>
-          <div>16/09</div>
-          <div>29°</div>
-        </div>
-        <div className={styles.div_day}>
-          <div>DAY</div>
-          <div>16/09</div>
-          <div>29°</div>
-        </div>
+        {period.map((day) => (
+          <div className={styles.div_day} key={day.dt}>
+            <div>{new Date(day.dt * 1000).toString().slice(0, 3)}</div>
+            <div>
+              {new Date(day.dt * 1000).toLocaleDateString().slice(0, 5)}
+            </div>
+            <div>{Math.round(day.temp.day)}°</div>
+            <img
+              src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`}
+              alt={day.weather[0].main}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
 };
-
+PeriodWeather.propTypes = {
+  period: propTypes.array.isRequired,
+};
 export default PeriodWeather;
